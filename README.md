@@ -7,7 +7,7 @@ T language
   -     mutable String x   ==       String x
 
 - Different Pointer/Reference syntax
-  -          T       ->       C++
-  -       String~    ==     String&
-  -       String->   ==     String*
-  -     @<variable>  ==   &<variable>   
+  -          T        ->       C++
+  -       String~     ==     String&
+  -       String->    ==     String*
+  -     @<variable>   ==   &<variable>   
