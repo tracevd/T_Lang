@@ -10,4 +10,4 @@ T language
   -           T            ->        C++
   -           String~      ==        String&
   -           String->     ==        String*
-  -           
+  -           @<variable>  ==        &<variable>   
