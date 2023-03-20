@@ -10,4 +10,5 @@ T language
   -          T        ->       C++
   -       String~     ==     String&
   -       String->    ==     String*
-  -     @<variable>   ==   &<variable>   
+  -     @<variable>   ==   &<variable>
+- Only allows one pointer depth (int-> only) unlike C++, which allows variable pointer depth (int* or int*****)
