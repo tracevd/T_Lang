@@ -3,7 +3,7 @@
 #include <iostream>
 #include <fstream>
 
-#include "T/T.h"
+#include "t/t.h"
 
 int main( int c, char** argv )
 {
