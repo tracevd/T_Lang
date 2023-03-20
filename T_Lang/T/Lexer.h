@@ -190,7 +190,7 @@ namespace t
 
     using TokenList = std::vector< lexer::Token >;
 
-    std::set< std::string > classes;
+    std::set< std::string > user_defined_classnames;
 
     class Lexer
     {
@@ -464,7 +464,7 @@ namespace t
 
             if ( lastType == TokenType::class_ )
             {
-                classes.insert( id );
+                user_defined_classnames.insert( id );
                 goto PushBackToken;
             }
 
@@ -480,7 +480,7 @@ namespace t
 
         bool isKeyWord( const std::string& str ) const { return lexer::KEYWORDS.find( str ) != lexer::KEYWORDS.cend(); }
         bool isDefaultType( const std::string& str ) const { return lexer::DEFAULT_TYPES.find( str ) != lexer::DEFAULT_TYPES.cend(); }
-        bool isUserDefinedClass( const std::string& str ) const { return classes.find( str ) != classes.cend(); }
+        bool isUserDefinedClass( const std::string& str ) const { return user_defined_classnames.find( str ) != user_defined_classnames.cend(); }
 
         std::string srctext;
         TokenList tokens;
@@ -493,5 +493,4 @@ namespace t
         inline bool isInt() { return srctext[ i ] >= '0' && srctext[ i ] <= '9'; }
         inline bool isAlpha() { return toupper( srctext[ i ] ) != tolower( srctext[ i ] ); }
     };
-
 }

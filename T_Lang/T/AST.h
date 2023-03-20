@@ -1,10 +1,9 @@
 #pragma once
 
 #include <stdint.h>
+#include <algorithm>
 
 #include "common.h"
-
-#include <algorithm>
 
 namespace t
 {
@@ -492,7 +491,7 @@ namespace t
                 name( std::move( name ) ),
                 paramList( std::move( params ) ),
                 body( std::move( stmts ) ) {}
-            FunctionDeclaration( FunctionDeclaration&& func ):
+            FunctionDeclaration( FunctionDeclaration&& func ) noexcept:
                 returnType( std::move( func.returnType ) ),
                 name( std::move( func.name ) ),
                 paramList( std::move( func.paramList ) ),
@@ -567,7 +566,7 @@ namespace t
             FieldDeclaration( VariableDeclaration&& var, AccessSpecifier spec ):
                 var( std::move( var ) ),
                 spec( spec ) {}
-            FieldDeclaration( FieldDeclaration&& field ):
+            FieldDeclaration( FieldDeclaration&& field ) noexcept:
                 var( std::move( field.var ) ),
                 spec( field.spec ) {}
 
@@ -776,5 +775,4 @@ namespace t
             StatementList body;
         };
     }
-
 }
