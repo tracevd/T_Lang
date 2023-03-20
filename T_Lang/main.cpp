@@ -3,12 +3,12 @@
 #include <iostream>
 #include <fstream>
 
-#include "T/Parser.h"
+#include "T/T.h"
 
 int main( int c, char** argv )
 {
     std::string program_str;
-    std::ifstream input( "C:/dev/T_Lang/CPP/T_Lang/test_lang.t", std::ios::in );
+    std::ifstream input( "C:/dev/T_Lang/T_Lang/test_lang.t", std::ios::in );
 
     if ( input.fail() )
     {
